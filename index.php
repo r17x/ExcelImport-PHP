@@ -4,6 +4,7 @@
     if ( isset($_FILES['excelfiles']) ){
 
         $excel = new ImportXL($_FILES['excelfiles']['tmp_name']);
+        $excel->saveFile();
         $c = count($excel->getData()); 
         echo $c; 
     }
