@@ -6,7 +6,11 @@
         $excel = new ImportXL($_FILES['excelfiles']['tmp_name']);
         $excel->saveFile();
         $c = count($excel->getData()); 
-        echo $c; 
+        echo sprintf("Total : %s" ,$c);
+        foreach( $excel->getData() as $data) {
+            printf($data);
+            // db function here
+        }
     }
 
 
